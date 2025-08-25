@@ -1,1 +1,9 @@
+<!doctype html><meta charset="utf-8">
+<script>
+  const p = new URLSearchParams(location.search);
+  const code = p.get('code'), state = p.get('state')||'';
+  if (code) location.replace('http://127.0.0.1:8181/callback?code='
+      + encodeURIComponent(code) + '&state=' + encodeURIComponent(state));
+</script>
+Authorization received — you can close this tab.
 
