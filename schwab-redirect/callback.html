@@ -1,15 +1,16 @@
 <!doctype html><meta charset="utf-8">
 <script>
-  const p = new URLSearchParams(location.search);
-  const code  = p.get('code');
-  const rawSt = p.get('state') || '';
-  let target  = 'http://127.0.0.1:8181/callback';  // default local listener
-  try {
-    const st = decodeURIComponent(rawSt);
-    if (/^https?:\/\/127\.0\.0\.1:\d+\/callback$/.test(st)) target = st;
-  } catch(_) {}
-  if (code) location.replace(`${target}?code=${encodeURIComponent(code)}&state=${encodeURIComponent(rawSt)}`);
+  const p=new URLSearchParams(location.search);
+  const code=p.get('code');
+  const raw=p.get('state')||'';
+  let target='http://127.0.0.1:8181/callback';  // default for local
+  try{
+    const st=decodeURIComponent(raw);
+    if(/^https?:\/\/127\.0\.0\.1:\d+\/callback$/.test(st)) target=st;
+  }catch(_){}
+  if(code) location.replace(`${target}?code=${encodeURIComponent(code)}&state=${encodeURIComponent(raw)}`);
 </script>
 Authorization received — you can close this tab.
+
 
 
